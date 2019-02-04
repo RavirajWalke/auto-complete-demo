@@ -1,0 +1,6 @@
+<!--<label class="" for={{label}}>{{label}}</label>-->
+<input [(ngModel)]="searchTerm" [style.width.rem] = 'width' maxlength="255" id={{label}} type="text"
+  (ngModelChange)="filterItems(searchTerm,inputList,maxLength)" placeholder="{{label}}">
+<ul class="autocomplete" [style.width.rem] = 'width' [ngClass]="isVisible ? 'visible' : 'hidden'">
+  <li *ngFor="let item of items" (click)="setItem(item); false">{{item}}</li>
+</ul>
